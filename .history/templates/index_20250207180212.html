@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Disease Prediction</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#predict">Predict</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="dark-mode-toggle">🌙</button>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>AI-Powered Disease Prediction</h1>
+        <p>Predict Diabetes, Heart Disease, and Parkinson's Disease using Machine Learning</p>
+        <a href="#predict" class="btn">Start Prediction</a>
+    </section>
+
+    <section id="predict">
+        <h2>Select Disease for Prediction</h2>
+        <div class="model-selector">
+            <button onclick="showForm('diabetes')">Diabetes</button>
+            <button onclick="showForm('heart')">Heart Disease</button>
+            <button onclick="showForm('parkinsons')">Parkinson's</button>
+        </div>
+
+        <!-- Diabetes Prediction Form -->
+        <form id="diabetes-form" class="prediction-form">
+            <h3>Diabetes Prediction</h3>
+            <input type="number" placeholder="Number of Pregnancies" required>
+            <input type="number" placeholder="Skin Thickness" required>
+            <input type="number" placeholder="Diabetes Pedigree Function" required>
+            <input type="number" placeholder="Glucose Level" required>
+            <input type="number" placeholder="Insulin Level" required>
+            <input type="number" placeholder="Age" required>
+            <input type="number" placeholder="Blood Pressure" required>
+            <input type="number" placeholder="BMI" required>
+            <button type="submit">Predict</button>
+            <p class="prediction-result"></p>
+        </form>
+
+        <!-- Heart Disease Prediction Form -->
+        <form id="heart-form" class="prediction-form">
+            <h3>Heart Disease Prediction</h3>
+            <input type="number" placeholder="Age" required>
+            <input type="number" placeholder="Resting Blood Pressure" required>
+            <input type="number" placeholder="Resting ECG Results" required>
+            <input type="number" placeholder="ST Depression" required>
+            <input type="number" placeholder="Thal (0,1,2)" required>
+            <input type="number" placeholder="Sex (0=Female, 1=Male)" required>
+            <input type="number" placeholder="Serum Cholesterol (mg/dl)" required>
+            <input type="number" placeholder="Max Heart Rate" required>
+            <button type="submit">Predict</button>
+            <p class="prediction-result"></p>
+        </form>
+
+        <!-- Parkinson's Prediction Form -->
+        <form id="parkinsons-form" class="prediction-form">
+            <h3>Parkinson's Disease Prediction</h3>
+            <input type="number" placeholder="MDVP:Fo(Hz)" required>
+            <input type="number" placeholder="MDVP:RAP" required>
+            <input type="number" placeholder="Shimmer:APQ3" required>
+            <input type="number" placeholder="HNR" required>
+            <input type="number" placeholder="D2" required>
+            <input type="number" placeholder="MDVP:Fhi(Hz)" required>
+            <button type="submit">Predict</button>
+            <p class="prediction-result"></p>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Disease Prediction System. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
