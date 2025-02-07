@@ -3,9 +3,7 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-import streamlit as st
-
-# Set page configuration (MUST be the first Streamlit command)
+# Set page configuration
 st.set_page_config(page_title="Prediction of Disease Outbreaks", layout="wide", page_icon="🧑‍⚕️")
 
 st.markdown("""
@@ -91,6 +89,8 @@ st.markdown("""
     }
     </style>
     """, unsafe_allow_html=True)
+
+
 
 
 # Getting the working directory

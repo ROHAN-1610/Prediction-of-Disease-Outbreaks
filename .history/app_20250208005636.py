@@ -3,9 +3,12 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 
+# Set page configuration
+st.set_page_config(page_title="Prediction of Disease Outbreaks", layout="wide", page_icon="🧑‍⚕️")
+
 import streamlit as st
 
-# Set page configuration (MUST be the first Streamlit command)
+# Set page configuration
 st.set_page_config(page_title="Prediction of Disease Outbreaks", layout="wide", page_icon="🧑‍⚕️")
 
 st.markdown("""
@@ -64,15 +67,15 @@ st.markdown("""
         box-shadow: 0px 4px 8px rgba(114, 9, 183, 0.6);
     }
 
-    /* Titles and Headings - Gradient Text */
+    /* Titles and Headings - Fixed Blur Issue */
     .stTitle, .stHeader, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3 {
-        color: transparent;
+        color: #3A0CA3; /* Solid color fallback */
         background: linear-gradient(90deg, #3A0CA3, #7209B7);
         background-clip: text;
         -webkit-background-clip: text;
         font-weight: bold;
         text-align: center;
-        text-shadow: 0px 0px 8px rgba(114, 9, 183, 0.3);
+        text-shadow: 2px 2px 4px rgba(114, 9, 183, 0.3);
     }
 
     /* Custom Cards - Glassmorphism */
