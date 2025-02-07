@@ -3,71 +3,61 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-# Set page configuration
+import streamlit as st
+
+# Set page configuration (MUST be the first Streamlit command)
 st.set_page_config(page_title="Prediction of Disease Outbreaks", layout="wide", page_icon="🧑‍⚕️")
 
 st.markdown("""
     <style>
-    /* General App Styling */
+    /* Smooth Background */
     .stApp {
-        background-color: #eef2f7;
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
         font-family: 'Arial', sans-serif;
+        color: #333;
     }
     
-    /* Sidebar Styling */
+    /* Sidebar */
     .stSidebar {
-        background: linear-gradient(135deg, #007bff, #6610f2);
+        background: linear-gradient(135deg, #343a40, #495057);
         color: white;
         padding: 20px;
         border-radius: 0px;
     }
-    .stSidebar h1, .stSidebar h2, .stSidebar h3 {
-        color: white;
-    }
     
     /* Button Styling */
     .stButton>button {
-        background: linear-gradient(135deg, #007bff, #6610f2);
+        background: #007bff;
         color: white !important;
         border-radius: 8px;
         padding: 12px 24px;
         font-size: 16px;
+        font-weight: bold;
         border: none;
-        transition: all 0.3s ease;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
     }
     .stButton>button:hover {
-        background: linear-gradient(135deg, #6610f2, #007bff);
+        background: #0056b3;
         transform: scale(1.05);
     }
-    
-    /* Text Input Fields */
+
+    /* Input Fields */
     .stTextInput>div>div>input {
         border-radius: 8px;
         padding: 12px;
-        border: 2px solid #007bff;
-        background-color: white;
+        border: 1px solid #ced4da;
+        background: white;
         color: black;
-        transition: border 0.3s ease;
     }
-    .stTextInput>div>div>input:focus {
-        border: 2px solid #6610f2;
-    }
-    
+
     /* Titles and Headings */
     .stTitle, .stHeader, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3 {
         color: #007bff;
         font-weight: bold;
         text-align: center;
     }
-    
-    /* Columns and Layout Improvements */
-    .stColumns {
-        display: flex;
-        justify-content: space-around;
-    }
-    
-    /* Custom Cards for Sections */
+
+    /* Cards */
     .stContainer {
         background: white;
         padding: 20px;
@@ -79,13 +69,14 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 
+
 # Getting the working directory
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Loading the saved models
-diabetes_model = pickle.load(open(f'{working_dir}/training_models/diabetes_model.sav', 'rb'))
-heart_disease_model = pickle.load(open(f'{working_dir}/training_models/heart_disease_model.sav', 'rb'))
-parkinsons_model = pickle.load(open(f'{working_dir}/training_models/parkinsons_model.sav', 'rb'))
+diabetes_model = pickle.load(open(f'{working_dir}/saved_models/diabetes_model.sav', 'rb'))
+heart_disease_model = pickle.load(open(f'{working_dir}/saved_models/heart_disease_model.sav', 'rb'))
+parkinsons_model = pickle.load(open(f'{working_dir}/saved_models/parkinsons_model.sav', 'rb'))
 
 # Sidebar for navigation
 with st.sidebar:

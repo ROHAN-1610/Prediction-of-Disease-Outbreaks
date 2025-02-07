@@ -10,87 +10,64 @@ st.set_page_config(page_title="Prediction of Disease Outbreaks", layout="wide", 
 
 st.markdown("""
     <style>
-    /* General App Styling - Smooth Background */
+    /* Smooth Background */
     .stApp {
-        background: linear-gradient(135deg, #E3F2FD, #F1E7FE, #D7E1EC);
-        font-family: 'Poppins', sans-serif;
-        color: #2C3E50;
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        font-family: 'Arial', sans-serif;
+        color: #333;
     }
     
-    /* Sidebar - Deep Elegant Gradient */
+    /* Sidebar */
     .stSidebar {
-        background: linear-gradient(135deg, #3A0CA3, #7209B7, #4361EE);
+        background: linear-gradient(135deg, #343a40, #495057);
         color: white;
         padding: 20px;
         border-radius: 0px;
-        box-shadow: 0px 0px 15px rgba(114, 9, 183, 0.5);
     }
-    .stSidebar h1, .stSidebar h2, .stSidebar h3 {
-        color: white;
-        text-shadow: 0px 0px 8px rgba(255,255,255,0.5);
-    }
-
-    /* Button Styling - Soft Glow Effect */
+    
+    /* Button Styling */
     .stButton>button {
-        background: linear-gradient(135deg, #3A0CA3, #7209B7, #4361EE);
+        background: #007bff;
         color: white !important;
-        border-radius: 12px;
-        padding: 14px 28px;
-        font-size: 18px;
+        border-radius: 8px;
+        padding: 12px 24px;
+        font-size: 16px;
         font-weight: bold;
         border: none;
         transition: all 0.3s ease-in-out;
-        box-shadow: 0px 4px 10px rgba(114, 9, 183, 0.4);
     }
     .stButton>button:hover {
-        background: linear-gradient(135deg, #4361EE, #7209B7, #3A0CA3);
-        transform: scale(1.08);
-        box-shadow: 0px 8px 16px rgba(114, 9, 183, 0.6);
-        border: 2px solid white;
+        background: #0056b3;
+        transform: scale(1.05);
     }
 
-    /* Text Input Fields - Glass Effect */
+    /* Input Fields */
     .stTextInput>div>div>input {
-        border-radius: 12px;
-        padding: 14px;
-        border: 2px solid rgba(67, 97, 238, 0.8);
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
+        border-radius: 8px;
+        padding: 12px;
+        border: 1px solid #ced4da;
+        background: white;
         color: black;
-        transition: all 0.3s ease-in-out;
-    }
-    .stTextInput>div>div>input:focus {
-        border: 2px solid #7209B7;
-        box-shadow: 0px 4px 8px rgba(114, 9, 183, 0.6);
     }
 
-    /* Titles and Headings - Gradient Text */
+    /* Titles and Headings */
     .stTitle, .stHeader, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3 {
-        color: transparent;
-        background: linear-gradient(90deg, #3A0CA3, #7209B7);
-        background-clip: text;
-        -webkit-background-clip: text;
+        color: #007bff;
         font-weight: bold;
         text-align: center;
-        text-shadow: 0px 0px 8px rgba(114, 9, 183, 0.3);
     }
 
-    /* Custom Cards - Glassmorphism */
+    /* Cards */
     .stContainer {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 25px;
-        border-radius: 15px;
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-        backdrop-filter: blur(12px);
-        margin-bottom: 25px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .stContainer:hover {
-        transform: translateY(-6px);
-        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
     }
     </style>
     """, unsafe_allow_html=True)
+
 
 
 # Getting the working directory
